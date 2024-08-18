@@ -32,13 +32,7 @@ public class CalculatorServiceImplementation implements CalculatorService {
     public String actionDivide(double num1, double num2) {
         String result;
         if (num1 == 0 || num2 == 0) {
-            if (num1 > num2) {
-                result = "+infinity";
-            } else if (num1 < num2) {
-                result = "-infinity";
-            } else {
-                result = "0";
-            }
+            result = num1 > num2 ? "+infinity" : (num1 < num2 ? "-infinity" : "0");
         } else {
             result = String.valueOf(num1 / num2);
         }
